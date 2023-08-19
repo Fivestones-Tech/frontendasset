@@ -1,0 +1,90 @@
+/* Reset some default styling */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Navigation styling */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.auth-buttons button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.auth-buttons button:hover {
+    background-color: #ff884d;
+}
+
+
+/* ... Previous styling ... */
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translateY(-100%);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+}
+
+.dropdown:hover .submenu {
+    /* display: block; */
+    display: grid;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown::after {
+    content: '\25BE'; /* Dropdown icon: ▾ */
+    margin-right: 5px;
+}
+
+.submenu::after {
+    content: '\25B4'; /* Upward icon: ▴ */
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #444;
+    display: none;
+}
+
+.submenu.active::before {
+    display: block;
+}
